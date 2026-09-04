@@ -1,0 +1,99 @@
+{
+  "fixture": {
+    "description": "deterministic 24-frame synthetic sequence",
+    "width": 512,
+    "height": 512,
+    "fps": 12.0,
+    "payload": "VIDEO"
+  },
+  "config": {
+    "image": {
+      "algorithm": "stdm",
+      "wavelet": "haar",
+      "wavelet_mode": "periodization",
+      "block_size": 4,
+      "dwt_level": 3,
+      "delta": 16.0,
+      "subbands": [
+        "LH",
+        "HL"
+      ],
+      "spread_chip_length": 8,
+      "spread_coefficients_per_block": 15,
+      "singular_index": 0,
+      "ecc_mode": "convolutional",
+      "header_repetition": 3,
+      "payload_repetition": 3,
+      "auth_tag_bytes": 8,
+      "luminance_only": true
+    },
+    "temporal_wavelet": "haar",
+    "temporal_window": 8,
+    "embed_group_interval": 1,
+    "codec": "libx264",
+    "crf": 18,
+    "preset": "veryfast",
+    "pixel_format": "yuv420p",
+    "preserve_audio": true,
+    "align_output_keyframes": true,
+    "extraction_max_samples": 64,
+    "search_temporal_phase": true
+  },
+  "rows": [
+    {
+      "attack": "No additional attack",
+      "ber": 0.0,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.8135134517007014,
+      "temporal_phase": 0,
+      "temporal_samples": 12
+    },
+    {
+      "attack": "H.264 CRF 28",
+      "ber": 0.0,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.6500773944361687,
+      "temporal_phase": 0,
+      "temporal_samples": 12
+    },
+    {
+      "attack": "H.265 CRF 30",
+      "ber": 0.0,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.5114437206562736,
+      "temporal_phase": 0,
+      "temporal_samples": 12
+    },
+    {
+      "attack": "Drop every 8th frame",
+      "ber": 0.0,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.7628105847113842,
+      "temporal_phase": 0,
+      "temporal_samples": 12
+    },
+    {
+      "attack": "Frame-rate conversion 9.00 fps",
+      "ber": 0.0,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.7752075322899443,
+      "temporal_phase": 0,
+      "temporal_samples": 12
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.wm.json
+*.tmp
+.DS_Store
+# Generated local video samples are intentionally not committed.
+assets/*.mp4
+assets/*.avi
+assets/*.mkv
+
+output/

@@ -212,7 +212,7 @@ This repetition and voting strategy is robust to ordinary H.264/H.265 transcodin
 |---|---:|---|
 | `algorithm` | `stdm` | Robust PN/STDM default; `svd-qim` is the research alternative. |
 | `wavelet` | `haar` | Spatial wavelet. PyWavelets enables additional discrete wavelets. |
-| `dwt_level` | `3` | Embeds in level-$L$ details; higher levels are coarser and lower-capacity. |
+| `dwt_level` | `3` | Embeds in detail bands at level L; higher levels are coarser and lower-capacity. |
 | `block_size` | `4` | DCT block width/height. |
 | `delta` | `12.0` | QIM spacing; larger is more robust but less imperceptible. |
 | `subbands` | `LH,HL` | Orientation bands carrying the watermark. |

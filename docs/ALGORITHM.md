@@ -28,9 +28,9 @@ For a 512×512 plane with $L=3$:
 
 The user secret is first mapped to a 256-bit internal key:
 
-$$
-K'=\operatorname{SHA256}(\texttt{"dsp-invisible-watermark/v1"}\parallel 0\parallel K).
-$$
+```math
+K'=\mathrm{SHA256}(\texttt{"dsp-invisible-watermark/v1"}\parallel 0\parallel K).
+```
 
 Counter-mode HMAC-SHA-256 expands $K'$ under separate context strings for carrier permutation, dither, PN chips, header whitening, body whitening, and authentication. Domain separation prevents one generated stream from being reused for another role.
 
@@ -44,9 +44,9 @@ Every PN row contains exactly $N_c/2$ values of +1 and $N_c/2$ values of −1. T
 
 For normalized de-dithered projection $x=(z-d)/\Delta$, let $e$ and $o$ be its nearest even and odd integers. The returned score is
 
-$$
-s=\operatorname{clip}(|x-e|-|x-o|,-1,1).
-$$
+```math
+s=\mathrm{clip}(|x-e|-|x-o|,-1,1).
+```
 
 Thus $s<0$ favors bit 0, $s>0$ favors bit 1, and $|s|$ is a bounded confidence proxy. Soft scores are more useful to the Viterbi decoder than hard lattice decisions.
 

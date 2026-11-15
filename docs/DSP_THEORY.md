@@ -30,15 +30,15 @@ For color media, the input BGR frame is converted to YCrCb and only the luminanc
 
 Let the host luminance plane be
 
-$$
+```math
 Y \in [0,255]^{H\times W}.
-$$
+```
 
 It is reflect-padded to a multiple of
 
-$$
+```math
 M = 2^L B,
-$$
+```
 
 where $L$ is the DWT level and $B$ is the DCT block size. Padding metadata is retained and removed after reconstruction.
 
@@ -46,14 +46,14 @@ where $L$ is the DWT level and $B$ is the DCT block size. Padding metadata is re
 
 A separable wavelet decomposition applies low-pass $h[n]$ and high-pass $g[n]$ analysis filters along rows and columns, followed by dyadic downsampling. At one level,
 
-$$
+```math
 \begin{aligned}
 LL(i,j) &= \sum_m\sum_n Y(m,n)h(2i-m)h(2j-n),\\
 LH(i,j) &= \sum_m\sum_n Y(m,n)h(2i-m)g(2j-n),\\
 HL(i,j) &= \sum_m\sum_n Y(m,n)g(2i-m)h(2j-n),\\
 HH(i,j) &= \sum_m\sum_n Y(m,n)g(2i-m)g(2j-n).
 \end{aligned}
-$$
+```
 
 The approximation $LL$ is recursively decomposed to level $L=3$. The default embeds into `LH₃` and `HL₃`: these mid-frequency orientation bands offer a better imperceptibility/robustness compromise than altering the low-frequency approximation or the most fragile diagonal detail band.
 
@@ -63,20 +63,20 @@ Run `python generate_assets.py` from the repository root to generate `assets/dwt
 
 Each selected DWT band is partitioned into $B\times B$ blocks. For a block $x[m,n]$, the orthonormal 2D DCT-II is
 
-$$
+```math
 C[u,v] = \alpha(u)\alpha(v)
 \sum_{m=0}^{B-1}\sum_{n=0}^{B-1}
 x[m,n]
 \cos\!\left[\frac{\pi(2m+1)u}{2B}\right]
 \cos\!\left[\frac{\pi(2n+1)v}{2B}\right],
-$$
+```
 
 with
 
-$$
+```math
 \alpha(0)=\sqrt{\frac{1}{B}},\qquad
 \alpha(k)=\sqrt{\frac{2}{B}}\;\text{for }k>0.
-$$
+```
 
 The DC term $C[0,0]$ is excluded. Remaining coefficients are ordered by JPEG-style zig-zag traversal; the default uses 15 non-DC coefficients from each 4×4 block.
 
@@ -85,42 +85,42 @@ The DC term $C[0,0]$ is excluded. Remaining coefficients are ordered by JPEG-sty
 The selected scalar DCT coefficients are packed into a vector $\mathbf{x}$. A secret key $K$ is expanded with HMAC-SHA-256 into independent domains for:
 
 - a carrier permutation $\pi_K$;
-- balanced pseudo-noise sequences $\mathbf{p}_i\in\{-1,+1\}^{N_c}$;
+- balanced pseudo-noise sequences $\mathbf{p}_i\in\lbrace -1,+1\rbrace^{N_c}$;
 - subtractive dithers $d_i\in[0,\Delta)$;
 - payload whitening streams.
 
-For coded bit $b_i\in\{0,1\}$, take the keyed chip
+For coded bit $b_i\in\lbrace 0,1\rbrace$, take the keyed chip
 
-$$
+```math
 \mathbf{x}_i =
 \left[x_{\pi_K(iN_c)},\ldots,x_{\pi_K(iN_c+N_c-1)}\right]^T
-$$
+```
 
 and its PN projection
 
-$$
+```math
 z_i = \frac{1}{N_c}\mathbf{p}_i^T\mathbf{x}_i.
-$$
+```
 
 The two parity lattices are
 
-$$
-\Lambda_b(d_i)=\left\{d_i+\Delta(2k+b):k\in\mathbb{Z}\right\}.
-$$
+```math
+\Lambda_b(d_i)=\left\lbrace d_i+\Delta(2k+b):k\in\mathbb{Z}\right\rbrace.
+```
 
 Embed by finding the nearest point in the lattice selected by the bit,
 
-$$
+```math
 z_i' = Q_{b_i}(z_i-d_i)+d_i,
-$$
+```
 
 then distribute the projection error across the chip:
 
-$$
+```math
 \boxed{\mathbf{x}_i' = \mathbf{x}_i + (z_i'-z_i)\mathbf{p}_i.}
-$$
+```
 
-Because $\|\mathbf{p}_i\|_2^2=N_c$, the new normalized projection is exactly $z_i'$. The extractor repeats the keyed projection and computes a soft score from the distance to the even and odd QIM lattices. Those scores feed the Viterbi decoder; no original cover is needed.
+Because $\lVert\mathbf{p}_i\rVert_2^2=N_c$, the new normalized projection is exactly $z_i'$. The extractor repeats the keyed projection and computes a soft score from the distance to the even and odd QIM lattices. Those scores feed the Viterbi decoder; no original cover is needed.
 
 The main strength/capacity controls are the quantizer step $\Delta$, chip length $N_c$, DWT level, sub-band set, block size, and selected coefficients per block.
 
@@ -128,25 +128,25 @@ The main strength/capacity controls are the quantizer step $\Delta$, chip length
 
 For every selected DCT block,
 
-$$
+```math
 C = U\Sigma V^T,
 \qquad
-\Sigma = \operatorname{diag}(\sigma_0,\sigma_1,\ldots).
-$$
+\Sigma = \mathrm{diag}(\sigma_0,\sigma_1,\ldots).
+```
 
 A classical additive SVD watermark changes the singular values as
 
-$$
+```math
 \boxed{\Sigma_{\text{watermarked}} = \Sigma + \alpha W.}
-$$
+```
 
 The implemented `svd-qim` backend replaces direct addition with keyed parity QIM on a chosen singular value:
 
-$$
-\sigma_k' = \underset{q\in\Lambda_b(d)}{\operatorname{argmin}}\;|\sigma_k-q|,
+```math
+\sigma_k' = \underset{q\in\Lambda_b(d)}{\mathrm{argmin}}\;|\sigma_k-q|,
 \qquad
 C' = U\Sigma'V^T.
-$$
+```
 
 This preserves blind bit decisions and constrains non-leading singular values to remain ordered. It is included for research comparisons; the STDM backend is the robust default.
 
@@ -160,9 +160,9 @@ magic | version | flags | payload_length | CRC32 | payload | HMAC_tag
 
 Header and body are independently whitened with key-derived bit streams. The default channel code is a terminated rate-1/2 convolutional code with constraint length $K=7$ and generators
 
-$$
+```math
 (g_0,g_1)=(171_8,133_8).
-$$
+```
 
 Extraction uses a soft-decision Viterbi decoder. CRC detects accidental corruption; the truncated HMAC rejects wrong keys and forged payloads. This is payload authentication—not media encryption, DRM, or a public ownership proof.
 
@@ -178,19 +178,19 @@ The video pipeline is a separable 3D transform: a one-level Haar transform along
 
 For pairs of luminance frames,
 
-$$
+```math
 L_t = \frac{Y_{2t}+Y_{2t+1}}{\sqrt{2}},
 \qquad
 H_t = \frac{Y_{2t}-Y_{2t+1}}{\sqrt{2}}.
-$$
+```
 
 The watermark is embedded into every selected $L_t$, while $H_t$ is retained. Reconstruction uses
 
-$$
+```math
 \widehat{Y}_{2t}=\frac{\widehat{L}_t+H_t}{\sqrt{2}},
 \qquad
 \widehat{Y}_{2t+1}=\frac{\widehat{L}_t-H_t}{\sqrt{2}}.
-$$
+```
 
 This makes paired frames share the same low-frequency watermark perturbation, reducing temporal flicker. The default video preset raises spatial $\Delta$ from 12 to 16 before temporal reconstruction to compensate for attenuation and inter-frame quantization.
 

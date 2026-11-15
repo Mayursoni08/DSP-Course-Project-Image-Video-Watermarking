@@ -1,0 +1,102 @@
+{
+  "fixture": "SpaceX rocket photograph via scikit-image data, resized to 512x512",
+  "payload": "DSP-WATERMARK-2026",
+  "rows": [
+    {
+      "attack": "No attack",
+      "ber": 0.0,
+      "psnr_db": 47.473043060541514,
+      "ssim": 0.9904174759183997,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.9242748852470742,
+      "registration": null
+    },
+    {
+      "attack": "JPEG Q=50",
+      "ber": 0.0,
+      "psnr_db": 32.146952104823086,
+      "ssim": 0.895774596490963,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.7698836945391214,
+      "registration": null
+    },
+    {
+      "attack": "Rotation 5°",
+      "ber": 0.0,
+      "psnr_db": 34.122192054008195,
+      "ssim": 0.9705980980320321,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.7326158603857645,
+      "registration": "orb-similarity"
+    },
+    {
+      "attack": "Median filter 3×3",
+      "ber": 0.0,
+      "psnr_db": 32.98100466283848,
+      "ssim": 0.9327309644902847,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.6632147397801093,
+      "registration": null
+    },
+    {
+      "attack": "AWGN σ=10",
+      "ber": 0.0,
+      "psnr_db": 28.11396394869775,
+      "ssim": 0.5078500929716274,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.6812733469125387,
+      "registration": null
+    },
+    {
+      "attack": "Gaussian blur 3×3",
+      "ber": 0.0,
+      "psnr_db": 34.51732652155732,
+      "ssim": 0.95214687255452,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.7211191177066073,
+      "registration": null
+    },
+    {
+      "attack": "Scale 0.75×",
+      "ber": 0.0,
+      "psnr_db": 35.88157604515034,
+      "ssim": 0.9616519147870268,
+      "valid": true,
+      "header_ok": true,
+      "crc_ok": true,
+      "auth_ok": true,
+      "confidence": 0.9114665721027897,
+      "registration": "orb-similarity"
+    },
+    {
+      "attack": "Center crop 90%",
+      "ber": 0.4513888888888889,
+      "psnr_db": 25.177500283009348,
+      "ssim": 0.9113067278602426,
+      "valid": false,
+      "header_ok": false,
+      "crc_ok": false,
+      "auth_ok": false,
+      "confidence": 0.6043328104884738,
+      "registration": "orb-similarity"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "generated_utc": "2026-11-15T11:05:50.945680+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.7",
+  "source_commit": "0b74cf37d8192b57392b3801ab082f365723b254",
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.18.0",
+    "PyWavelets": "1.9.0",
+    "opencv-python": "4.10.0.84",
+    "matplotlib": "3.9.2",
+    "ffmpeg-python": "not installed in this run (video results reused)"
+  },
+  "ffmpeg": "ffmpeg version 9.0.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "image_sources": [
+    "AI-generated forest and river landscape resized to 512x512",
+    "SpaceX rocket photograph resized to 512x512"
+  ],
+  "awgn_seed": 7,
+  "image_payload": "DSP-WATERMARK-2026",
+  "image_key": "docs-only-demo-key-2026",
+  "note": "Public test key; one AI-generated image, one photographic image, and a synthetic video. This small set is not representative of AI-generated media."
+}

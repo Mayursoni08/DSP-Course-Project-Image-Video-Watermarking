@@ -1,0 +1,79 @@
+[
+  {
+    "delta": 4,
+    "psnr_db": 51.21056384070503,
+    "ssim": 0.9988049211093283,
+    "clean_ber": 0.0,
+    "clean_valid": true,
+    "jpeg50_ber": 0.4722222222222222,
+    "jpeg50_valid": false,
+    "awgn10_ber": 0.5138888888888888,
+    "awgn10_valid": false
+  },
+  {
+    "delta": 6,
+    "psnr_db": 50.017891800917695,
+    "ssim": 0.9984896870572141,
+    "clean_ber": 0.0,
+    "clean_valid": true,
+    "jpeg50_ber": 0.0,
+    "jpeg50_valid": true,
+    "awgn10_ber": 1.0,
+    "awgn10_valid": false
+  },
+  {
+    "delta": 8,
+    "psnr_db": 48.77040652858283,
+    "ssim": 0.9980765134092611,
+    "clean_ber": 0.0,
+    "clean_valid": true,
+    "jpeg50_ber": 0.0,
+    "jpeg50_valid": true,
+    "awgn10_ber": 0.0,
+    "awgn10_valid": true
+  },
+  {
+    "delta": 10,
+    "psnr_db": 47.84368164531991,
+    "ssim": 0.9976628741469348,
+    "clean_ber": 0.0,
+    "clean_valid": true,
+    "jpeg50_ber": 0.0,
+    "jpeg50_valid": true,
+    "awgn10_ber": 0.0,
+    "awgn10_valid": true
+  },
+  {
+    "delta": 12,
+    "psnr_db": 46.96625502831134,
+    "ssim": 0.9972533566852718,
+    "clean_ber": 0.0,
+    "clean_valid": true,
+    "jpeg50_ber": 0.0,
+    "jpeg50_valid": true,
+    "awgn10_ber": 0.0,
+    "awgn10_valid": true
+  },
+  {
+    "delta": 16,
+    "psnr_db": 45.028754060308955,
+    "ssim": 0.9958972805234644,
+    "clean_ber": 0.0,
+    "clean_valid": true,
+    "jpeg50_ber": 0.0,
+    "jpeg50_valid": true,
+    "awgn10_ber": 0.0,
+    "awgn10_valid": true
+  },
+  {
+    "delta": 20,
+    "psnr_db": 43.64938614036592,
+    "ssim": 0.9945266438689725,
+    "clean_ber": 0.0,
+    "clean_valid": true,
+    "jpeg50_ber": 0.0,
+    "jpeg50_valid": true,
+    "awgn10_ber": 0.0,
+    "awgn10_valid": true
+  }
+]

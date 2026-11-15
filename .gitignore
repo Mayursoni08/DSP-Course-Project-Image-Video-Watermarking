@@ -21,3 +21,14 @@ assets/*
 
 output/
 results/
+
+# LaTeX build products (editable report sources and figures are tracked).
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.lof
+report/*.lot
+report/*.xdv
+report/*.synctex.gz
+report/main.pdf

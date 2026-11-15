@@ -1,0 +1,98 @@
+[
+  {
+    "attack": "No attack",
+    "ber": 0.0,
+    "psnr_db": 46.96625502831134,
+    "ssim": 0.9972533566852718,
+    "valid": true,
+    "header_ok": true,
+    "crc_ok": true,
+    "auth_ok": true,
+    "confidence": 0.9252383242899718,
+    "registration": null
+  },
+  {
+    "attack": "JPEG Q=50",
+    "ber": 0.0,
+    "psnr_db": 25.05456169171516,
+    "ssim": 0.8023730509795136,
+    "valid": true,
+    "header_ok": true,
+    "crc_ok": true,
+    "auth_ok": true,
+    "confidence": 0.7703356784654785,
+    "registration": null
+  },
+  {
+    "attack": "Rotation 5°",
+    "ber": 0.5486111111111112,
+    "psnr_db": 24.402373902928485,
+    "ssim": 0.8609628522780343,
+    "valid": false,
+    "header_ok": false,
+    "crc_ok": false,
+    "auth_ok": false,
+    "confidence": 0.5012725246444564,
+    "registration": "orb-similarity"
+  },
+  {
+    "attack": "Median filter 3×3",
+    "ber": 0.5694444444444444,
+    "psnr_db": 24.35423357737925,
+    "ssim": 0.7701832550624513,
+    "valid": false,
+    "header_ok": false,
+    "crc_ok": false,
+    "auth_ok": false,
+    "confidence": 0.5306676288538623,
+    "registration": null
+  },
+  {
+    "attack": "AWGN σ=10",
+    "ber": 0.0,
+    "psnr_db": 28.2101783683917,
+    "ssim": 0.8388292108543713,
+    "valid": true,
+    "header_ok": true,
+    "crc_ok": true,
+    "auth_ok": true,
+    "confidence": 0.679065388709979,
+    "registration": null
+  },
+  {
+    "attack": "Gaussian blur 3×3",
+    "ber": 0.0,
+    "psnr_db": 26.197562642527377,
+    "ssim": 0.8529957695877726,
+    "valid": true,
+    "header_ok": true,
+    "crc_ok": true,
+    "auth_ok": true,
+    "confidence": 0.5825949027851872,
+    "registration": null
+  },
+  {
+    "attack": "Scale 0.75×",
+    "ber": 0.0,
+    "psnr_db": 27.535095786253116,
+    "ssim": 0.8955639107525392,
+    "valid": true,
+    "header_ok": true,
+    "crc_ok": true,
+    "auth_ok": true,
+    "confidence": 0.8858756687456331,
+    "registration": "orb-similarity"
+  },
+  {
+    "attack": "Center crop 90%",
+    "ber": 0.5138888888888888,
+    "psnr_db": 20.280576901343125,
+    "ssim": 0.8222299020273361,
+    "valid": false,
+    "header_ok": false,
+    "crc_ok": false,
+    "auth_ok": false,
+    "confidence": 0.5193901521134268,
+    "registration": "orb-similarity"
+  }
+]

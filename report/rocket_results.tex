@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrr}
+\toprule
+Attack & PSNR (dB) & SSIM & BER & Valid \\
+\midrule
+No attack & 47.47 & 0.9904 & 0.0000 & Yes \\
+JPEG Q=50 & 32.15 & 0.8958 & 0.0000 & Yes \\
+Rotation $5^\circ$ (registered) & 34.12 & 0.9706 & 0.0000 & Yes \\
+Median $3\times3$ & 32.98 & 0.9327 & 0.0000 & Yes \\
+AWGN $\sigma=10$ & 28.11 & 0.5079 & 0.0000 & Yes \\
+Gaussian blur $3\times3$ & 34.52 & 0.9521 & 0.0000 & Yes \\
+Scale $0.75\times$ (registered) & 35.88 & 0.9617 & 0.0000 & Yes \\
+Crop 90\% per axis (registered) & 25.18 & 0.9113 & 0.4514 & No \\
+\bottomrule
+\end{tabular}

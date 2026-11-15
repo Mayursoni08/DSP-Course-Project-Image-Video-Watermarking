@@ -1,0 +1,65 @@
+[
+  {
+    "quality": 100,
+    "psnr_db": 30.843749636541506,
+    "ssim": 0.939268623571008,
+    "ber": 0.0,
+    "authenticated": true
+  },
+  {
+    "quality": 95,
+    "psnr_db": 30.30586433385448,
+    "ssim": 0.927239115788693,
+    "ber": 0.0,
+    "authenticated": true
+  },
+  {
+    "quality": 90,
+    "psnr_db": 29.277263717104116,
+    "ssim": 0.9059891571251474,
+    "ber": 0.0,
+    "authenticated": true
+  },
+  {
+    "quality": 80,
+    "psnr_db": 27.4485656655115,
+    "ssim": 0.8681269132488864,
+    "ber": 0.0,
+    "authenticated": true
+  },
+  {
+    "quality": 70,
+    "psnr_db": 26.326236900572802,
+    "ssim": 0.8408126803113811,
+    "ber": 0.0,
+    "authenticated": true
+  },
+  {
+    "quality": 60,
+    "psnr_db": 25.553757707600266,
+    "ssim": 0.8192827240519746,
+    "ber": 0.0,
+    "authenticated": true
+  },
+  {
+    "quality": 50,
+    "psnr_db": 25.05456169171516,
+    "ssim": 0.8023730509795136,
+    "ber": 0.0,
+    "authenticated": true
+  },
+  {
+    "quality": 40,
+    "psnr_db": 24.58669178234949,
+    "ssim": 0.7839175331458516,
+    "ber": 0.0,
+    "authenticated": true
+  },
+  {
+    "quality": 30,
+    "psnr_db": 24.033980177138133,
+    "ssim": 0.7593631660032116,
+    "ber": 0.0,
+    "authenticated": true
+  }
+]

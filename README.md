@@ -12,6 +12,8 @@ Video watermarking adds a temporal Haar transform and combines extraction scores
 
 For the course-project explanation, see [DSP theory and implementation](docs/DSP_THEORY.md): the original mathematical derivations, embedding/extraction logic, video processing, and links to the Python modules.
 
+The [course report](report/README.md) includes editable LaTeX, result figures, measured tables, and a script to reproduce the experiments.
+
 ## Setup
 
 Requires **Python 3.10+**. Video operations also require `ffmpeg` and `ffprobe` on your `PATH`, with the encoder you select (`libx264` by default).

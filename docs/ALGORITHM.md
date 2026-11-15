@@ -1,6 +1,6 @@
 # Algorithm reference
 
-This document records implementation-level details needed to reproduce or extend the watermarking core. The README provides the main equations and operating instructions.
+This document records implementation-level details needed to reproduce or extend the watermarking core. The README provides a pipeline overview and operating instructions.
 
 ## Coordinate and transform conventions
 

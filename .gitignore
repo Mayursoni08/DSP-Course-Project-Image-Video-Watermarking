@@ -14,9 +14,10 @@ htmlcov/
 *.wm.json
 *.tmp
 .DS_Store
-# Generated local video samples are intentionally not committed.
-assets/*.mp4
-assets/*.avi
-assets/*.mkv
+# Keep only the sample cover and README preview under version control.
+assets/*
+!assets/original.png
+!assets/original_vs_watermarked.png
 
 output/
+results/

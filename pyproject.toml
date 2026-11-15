@@ -46,8 +46,8 @@ dev = [
 dsp-watermark = "cli:main"
 
 [project.urls]
-Repository = "https://github.com/eshwar-iiti/dsp-invisible-watermark"
-Issues = "https://github.com/eshwar-iiti/dsp-invisible-watermark/issues"
+Repository = "https://github.com/namanshetty25/DSP-Course-Project-Image-Video-Watermarking"
+Issues = "https://github.com/namanshetty25/DSP-Course-Project-Image-Video-Watermarking/issues"
 
 [tool.setuptools]
 py-modules = ["cli", "generate_assets"]

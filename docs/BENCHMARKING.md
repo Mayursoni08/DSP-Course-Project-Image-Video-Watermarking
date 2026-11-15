@@ -4,7 +4,7 @@
 
 `benchmarks.sample_data.synthetic_cover()` creates a deterministic 512×512 BGR image containing gradients, correlated texture, smooth regions, sharp edges, repeated line features, text, and geometric shapes. No downloaded or restricted asset is required.
 
-The committed benchmark uses:
+The reproducible benchmark uses:
 
 ```text
 key:     docs-only-demo-key-2026
@@ -74,4 +74,4 @@ Video results include BER, frame-phase selected by the decoder, number of tempor
 
 ## Reporting policy
 
-Commit raw JSON/CSV beside any table or graph. Record codec version, platform, content class, dimensions, payload length, and complete config for formal experiments. Report failures and confidence intervals; do not select only successful covers.
+Generated reports are ignored by Git. When publishing experimental results, include raw JSON/CSV beside any table or graph. Record codec version, platform, content class, dimensions, payload length, and complete config for formal experiments. Report failures and confidence intervals; do not select only successful covers.

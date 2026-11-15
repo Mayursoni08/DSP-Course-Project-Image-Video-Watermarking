@@ -10,6 +10,8 @@ The image pipeline modifies luminance using **multi-level DWT → block DCT → 
 
 Video watermarking adds a temporal Haar transform and combines extraction scores across multiple frames. Image extraction is blind by default; geometric alignment can use the original image as a reference.
 
+For the course-project explanation, see [DSP theory and implementation](docs/DSP_THEORY.md): the original mathematical derivations, embedding/extraction logic, video processing, and links to the Python modules.
+
 ## Setup
 
 Requires **Python 3.10+**. Video operations also require `ffmpeg` and `ffprobe` on your `PATH`, with the encoder you select (`libx264` by default).
